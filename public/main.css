@@ -1,0 +1,13 @@
+body{ background: #ccc; margin:0; padding:0; font-size:12px; color:#333;}
+.loginBox{ width:300px; height:150px; background: #fff;padding:10px;}
+.registerBox{ width:300px; height:200px; background: #fff;padding:10px; }
+.colWarning{line-height: 20px; height:20px; color:red; text-align: left}
+.rightBox{width:300px; height:50px; border:1px solid red; background: #fff;padding:10px;}
+input{margin:5px; border:1px solid #ddd;}
+.content{width:100%; height:auto; background-color: #fff}
+a.active{color:#ff0000;} 
+.btn a{width:200px; height:30px; line-height: 30px; text-align: center; text-decoration: none; background-color: #bb0000; color:#fff;}
+.left{width:500px; height:auto; background-color: #fff; padding:10px; float:left;}
+.right{width:300px; height:auto; margin-left:20px; float:left; }
+.main{width:920px; margin:10 auto;}
+li{text-decoration: none}

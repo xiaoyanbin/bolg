@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block main %}
+
+<ol class="breadcrumb">
+  <li><a href="/">管理首页</a></li>
+  <li><a href="#"><span>内容添加</span></a></li>
+
+</ol>
+<h3></h3>
+
+
+<form  action="" method="post">
+
+  <div class="form-group">
+    <label for="name">分类</label>
+    <select name="category" id="category" class="form-control">
+    	
+        {% for categorie in categories%}
+        <option value="{{categorie.id}}">{{categorie.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="title">内容标题</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="请输入标题">
+  </div>
+  <div class="form-group">
+    <label for="description">简介</label>
+    <textarea  name="description" id="description" class="form-control" rows="10" placeholder="请输入简介"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="content">内容</label>
+    <textarea  name="content" id="content"  class="form-control" rows="10" placeholder="请输入内容"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+
+{% endblock %}

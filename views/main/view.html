@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+ <div class="content">
+
+
+<div class="title">{{content.title}}</div>
+<div class="miaoshu">作者:{{content.user.username}} 栏目：{{content.category.name}} 浏览量：{{content.views}} 评论数:{{content.comments.length}}
+   <div class="date"> 添加时间：{{content.addTime | date('Y-m-d H:i:s',-8*60)}}</div>
+</div>
+
+
+<div class="des">{{content.description}}</div>
+<div class="body">{{content.content}}</div>
+
+</div>
+<div class="sub_comment">
+{% if userInfo._id %}
+<textarea id="messageContent" class="textarea" ></textarea><br/> 
+<button  id="messageBtn" class="btn">提交</button>
+{% else %}
+<p class="bgDanger">你还没有登录请登录</p>
+{% endif %}
+<input type="hidden" id="contentId" value="{{content.id}}"/>
+</div>
+
+
+<div class="messagecount"> 
+	评论列表<span id="messageCount">{{content.comments.length}}</span>
+</div>
+
+
+<div class="messageList" >
+</div>
+
+<div class="pager">
+	<ul class="clear">
+		<li class="previous"><a href="javascript:;">上一页</a></li>
+		<li ></li>
+		<li class="next"><a href="javascript:;">下一页</a></li>
+	</ul>
+</div>
+
+
+
+<script type="text/javascript" src="/public/js/comment.js"></script>
+{% endblock %}

@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>我的博客</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/list.css">
+	<script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/index.js"></script>
+</head>
+<body class="bj">
+     
+  <div class="nav_crumbs"> {% if category %}
+	<span class="list_nav_li"><a href="/" > 首页</a></span>
+	{% else %}
+	<span class="list_nav_li active"><a href="/" > 首页</a></span>
+	{% endif%}
+	
+    {% for cat in categories%}
+       {% if category=== cat.id %}
+       <span class="list_nav_li active"><a href="/?category={{cat.id}}"> {{cat.name}}</a></span>
+       {% else %}
+       <span class="list_nav_li" ><a href="/?category={{cat.id}}"> {{cat.name}}</a></span>
+       {% endif%} 
+	{% endfor%}
+</div>   
+
+<div class="article_list">
+    <div class="a_list_left">
+		{% block content %}
+		{% endblock%}
+    </div>
+
+    <div class="a_list_right">
+		{% if userInfo._id %}
+			<div id="userInfo" class="rightBox a_list_right_t">
+		        <div class="right_title">用户信息</div>
+		        <span class="right_money">{{userInfo.username}}</span>
+		        {% if userInfo.isAdmin %}
+		        <span class="right_money">你好！管理员<a href="/admin">进入管理</a></span>
+		        {% else %}
+		        <span class="right_money">你好！欢迎登录我的博客</span>
+		        {% endif %}
+				<br/>
+				<span class="logOut red" id="logOut">退出</span>
+			</div>
+		    {% else %}
+			<div id="loginBox" class="loginBox a_list_right_t">
+				<div class="right_title">登陆</div>
+				<div class="right_input"><input type="text" value="" placeholder="请输入用户名" name="username" id="username"></div>
+				<div class="right_input"><input type="text" value="" placeholder="请输入密码" name="password" id="password"></div>
+				<button class="right_btn ">提交</button>
+
+				 <a href="javascript:;">注册</a>
+
+				<div class="colWarning right_text_pop"> </div>
+			</div>
+
+			<div id="registerBox" class="registerBox a_list_right_t" style="display:none">
+				<div class="right_title">注册</div>
+				<div class="right_input"><input type="text" value="" placeholder="请输入用户名" name="username" id="usernames"></div>
+				<div class="right_input"><input type="text" value="" placeholder="请输入密码" name="password" id="passwords"></div>
+				<div class="right_input"><input type="text" value="" placeholder="请再次输入密码" name="repassword" id="repassword"></div>
+				<button class="right_btn ">注册</button>  <a href="javascript:;">立即登录</a>
+				<div class="colWarning"></div>
+			</div>
+		{% endif %}
+    </div>
+
+</div>
+</body>
+</html>

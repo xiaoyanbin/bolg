@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+ <div class="content">
+
+ 	{% for content in contents %}
+    <div class="list">
+    <div class="title">{{content.title}}</div>
+		<div class="miaoshu">
+      作者:{{content.user.username}} 栏目：{{content.category.name}} 浏览量：{{content.views}}
+          <div class="date"> 添加时间：{{content.addTime | date('Y-m-d H:i:s',-8*60)}}</div>
+    </div>
+    <div class="jj">{{content.description}}</div>
+    <div class="btn"><a href="/view?contentId={{content.id}}"> 阅读全文</a></div>
+	  </div>
+  {% endfor%} 
+</div>
+<nav aria-label="...">
+  <ul class="pager">
+  	    <li>{% if page <=1%}
+         <span> 没有上一页 </span>
+  	    {% else %}
+           <a href="/?category={{category}}&page={{page-1}}"><span aria-hidden="true">&larr;</span> 上一页</a>
+  	    {% endif%}
+</li>
+    <li> {{page}}/  {{pages}}</li>
+      <li>	{% if page >=pages %}
+         <span> 没有下一页 </span>
+  	    {% else %}
+           <a href="/?category={{category}}&page={{page+1}}"><span aria-hidden="true">&larr;</span> 下一页</a>
+  	    {% endif%}</li>
+   
+  </ul>
+</nav>
+{% endblock %}
+     
+

@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>我的博客</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap-theme.min.css">
+	<script type="text/javascript" src="/public/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/js/admin.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/admin">后台管理</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/admin/user">用户管理</a></li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类管理 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/category">分类首页</a></li>
+            <li><a href="/admin/category/add">添加分类</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">内容管理 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/content">内容首页</a></li>
+            <li><a href="/admin/content/add">添加内容</a></li>
+          </ul>
+        </li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userInfo.username}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+	{%block main %} {% endblock %}
+ 
+</div>
+
+
+</body>
+</html>
