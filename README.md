@@ -1,7 +1,7 @@
 # node上手开发blog系统
 
 
->node开发博客系统  express
+>node开发博客系统  express +ejs
 
 
 >npm intall 安装
