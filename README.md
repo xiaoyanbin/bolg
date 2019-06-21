@@ -14,16 +14,20 @@
 >//启动mongod 注意端口和 app.js里端口一致
 >mongod --dbpath F:\node\bolg\db --port 27018
 
->内容包括
+#内容包括
 
 >博客分类列表
+![](./imgs/1.png)
 >博客详情
+![](./imgs/2.png)
 >博客评论
+![](./imgs/3.png)
 >会员中心
+![](./imgs/5.png)
 >管理员
 >后台 文章类型录入  文章录入
 
-![](./imgs/1.png)
-![](./imgs/2.png)
-![](./imgs/3.png)
-![](./imgs/5.png)
+
+
+
+
