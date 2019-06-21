@@ -12,7 +12,7 @@
 >C:\Program Files\MongoDB\Server\3.4\bin  
 
 >//启动mongod 注意端口和 app.js里端口一致
->mongod --dbpath F:\node\bolg\db --port 27018
+>mongod --dbpath F:\node\bolg\db --port 27017
 
 #内容包括
 
